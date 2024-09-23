@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+app = "pipenv run python3 app.py"
+test = "pipenv run pytest ."
