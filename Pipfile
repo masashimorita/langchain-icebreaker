@@ -17,3 +17,4 @@ python_version = "3.10"
 [scripts]
 app = "pipenv run python3 app.py"
 test = "pipenv run pytest ."
+ice_breaker = "pipenv run python3 ice_breaker.py"
