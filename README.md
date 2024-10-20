@@ -37,6 +37,12 @@ Go to the project directory
   cd LangChainIceBreaker
 ```
 
+Create Network
+
+```bash
+  docker network create ollama_default
+```
+
 Build Docker image
 
 ```bash

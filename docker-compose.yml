@@ -13,7 +13,12 @@ services:
       - 7001:7000
     env_file:
       - .env
+    networks:
+      - ollama_default
     # depends_on:
     #   - db
 # volumes:
 #   postgresql:
+networks:
+  ollama_default:
+    external: true

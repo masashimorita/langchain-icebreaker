@@ -1,5 +1,8 @@
 .PHONY: build install sh run down
 
+create-network:
+	docker network create ollama_default
+
 up:
 	docker compose -f docker-compose.yml up
 
