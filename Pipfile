@@ -9,6 +9,7 @@ verify_ssl = true
 langchain = "*"
 langchain-openai = "*"
 langchain-community = "*"
+langchainhub = "*"
 
 [requires]
 python_version = "3.10"
