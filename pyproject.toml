@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "langchainicebreaker"
+version = "0.0.1"
+description = "IceBreaker app build with LangChain"
+authors = ["masashimorita"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain = "^0.3.13"
+python-dotenv = "^1.0.1"
+langchain-openai = "^0.2.14"
+langchain-community = "^0.3.13"
+langchainhub = "^0.1.21"
+black = "^24.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
