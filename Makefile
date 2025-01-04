@@ -16,7 +16,7 @@ bash:
 	docker compose -f docker-compose.yml run --rm app bash
 
 shell:
-	docker compose -f docker-compose.yml run --rm app bash pipenv shell
+	docker compose -f docker-compose.yml run --rm app bash poetry shell
 
 black:
-	docker compose -f docker-compose.yml run --rm app bash pipenv run black .
+	docker compose -f docker-compose.yml run --rm app bash black .
