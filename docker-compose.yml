@@ -6,6 +6,7 @@ services:
   #     - postgresql:/var/lib/postgresql/data
   app:
     build: .
+    command: python3 app.py
     tty: true
     volumes:
       - .:/app
