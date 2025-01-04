@@ -6,7 +6,7 @@ services:
   #     - postgresql:/var/lib/postgresql/data
   app:
     build: .
-    command: pipenv run app
+    tty: true
     volumes:
       - .:/app
     ports:
