@@ -3,7 +3,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 
-from thrid_parties.linkedin import scrape_linkedin_profile
+from .thrid_parties.linkedin import scrape_linkedin_profile
 
 if __name__ == "__main__":
     load_dotenv()
