@@ -7,21 +7,15 @@ Ice Breaker app created with LangChain.
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`PYTHONPATH=/{YOUR_PATH_TO_PROJECT}/LangChainIceBreaker`
-
-`OPENAI_API_KEY`
-
-`PROXYCURL_API_KEY`
-
-`TAVILY_API_KEY`
-
-`TWITTER_API_KEY`
-
-`TWITTER_API_SECRET`
-
-`TWITTER_ACCESS_TOKEN`
-
-`TWITTER_ACCESS_SECRET`
+```
+OPENAI_API_KEY=
+PROXYCURL_API_KEY=
+TAVILY_API_KEY=
+TWITTER_API_KEY=
+TWITTER_API_SECRET=
+TWITTER_ACCESS_TOKEN=
+TWITTER_ACCESS_SECRET=
+```
 
 ## Run Application on Local
 
@@ -58,20 +52,11 @@ Access Docker Image
 Install dependencies
 
 ```bash
-  pipenv install
+  poetry install
 ```
 
 Start the flask server
 
 ```bash
   docker compose up
-```
-
-
-## Running Tests
-
-To run tests, run the following command
-
-```bash
-  pipenv run pytest .
 ```
