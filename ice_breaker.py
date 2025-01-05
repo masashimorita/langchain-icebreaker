@@ -7,9 +7,10 @@ from third_parties.linkedin import scrape_linkedin_profile
 from agents.linkedin_lookup_agent import lookup as linkedin_lookup_agent
 
 
-def ice_break_with(name: str) -> str:
+def ice_break_with(name: str, mock: bool = False) -> str:
     linkedin_username = linkedin_lookup_agent(name)
-    linkedin_data = scrape_linkedin_profile(linkedin_profile_url=linkedin_username)
+    print(linkedin_username)
+    linkedin_data = scrape_linkedin_profile(linkedin_profile_url=linkedin_username, mock=mock)
 
     summary_tempalte = """
         given the LinkedIn information {information} about a person from I want you to create:
@@ -34,4 +35,4 @@ if __name__ == "__main__":
 
     print("Ice Breaker Enter")
 
-    ice_break_with(name="Eden Marco Udemy")
+    ice_break_with(name="Eden Marco Udemy", mock=True)
