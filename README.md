@@ -55,7 +55,7 @@ Install dependencies
   poetry install
 ```
 
-Start the flask server
+Start the Docker services
 
 ```bash
   docker compose up
