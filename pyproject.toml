@@ -15,6 +15,7 @@ langchain-community = "^0.3.13"
 langchainhub = "^0.1.21"
 black = "^24.10.0"
 tweepy = "^4.14.0"
+flask = "^3.1.0"
 
 
 [build-system]
