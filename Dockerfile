@@ -10,14 +10,19 @@ WORKDIR /app
 
 RUN pip install poetry
 
+COPY .venv ./
+
 COPY pyproject.toml poetry.lock ./
 
 RUN poetry install --no-root
 
 COPY . .
 
-# Expose the application port
-EXPOSE 8000
-
 # Set the entrypoint to use poetry
 ENTRYPOINT ["poetry", "run"]
+
+# Expose the application port
+EXPOSE 5000
+CMD ["flask", "run", "--host=0.0.0.0"]
+
+CMD ["python", "app.py"]
