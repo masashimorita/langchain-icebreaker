@@ -13,13 +13,10 @@ from output_parsers import summary_parser, Summary
 
 def ice_break_with(name: str, mock: bool = False) -> Tuple[Summary, str]:
     linkedin_username = linkedin_lookup_agent(name=name)
-    print(linkedin_username)
     linkedin_data = scrape_linkedin_profile(linkedin_profile_url=linkedin_username, mock=mock)
 
     twitter_username = twitter_lookup_agent(name=name)
     tweets = scrape_user_tweets(username=twitter_username, mock=mock)
-    print(twitter_username)
-    print(tweets)
 
     summary_tempalte = """
         given the information about a person from LinkedIn {information},
@@ -49,4 +46,4 @@ if __name__ == "__main__":
 
     print("Ice Breaker Enter")
 
-    ice_break_with(name="Eden Marco Udemy", mock=True)
+    print(ice_break_with(name="Eden Marco Udemy", mock=True))
