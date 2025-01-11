@@ -13,7 +13,9 @@ from output_parsers import summary_parser, Summary
 
 def ice_break_with(name: str, mock: bool = False) -> Tuple[Summary, str]:
     linkedin_username = linkedin_lookup_agent(name=name)
-    linkedin_data = scrape_linkedin_profile(linkedin_profile_url=linkedin_username, mock=mock)
+    linkedin_data = scrape_linkedin_profile(
+        linkedin_profile_url=linkedin_username, mock=mock
+    )
 
     twitter_username = twitter_lookup_agent(name=name)
     tweets = scrape_user_tweets(username=twitter_username, mock=mock)
@@ -29,14 +31,19 @@ def ice_break_with(name: str, mock: bool = False) -> Tuple[Summary, str]:
     """
 
     summary_prompt_template = PromptTemplate(
-        input_variables=["information", "twitter_posts"], template=summary_tempalte,
-        partial_variables={"format_instructions": summary_parser.get_format_instructions()}
+        input_variables=["information", "twitter_posts"],
+        template=summary_tempalte,
+        partial_variables={
+            "format_instructions": summary_parser.get_format_instructions()
+        },
     )
 
     llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
     chain = summary_prompt_template | llm | summary_parser
-    res: Summary = chain.invoke(input={"information": linkedin_data, "twitter_posts": tweets})
+    res: Summary = chain.invoke(
+        input={"information": linkedin_data, "twitter_posts": tweets}
+    )
 
     return res, linkedin_data.get("profile_pic_url")
 

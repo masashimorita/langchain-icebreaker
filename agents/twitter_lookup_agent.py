@@ -7,19 +7,13 @@ load_dotenv()
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.tools import Tool
-from langchain.agents import (
-    create_react_agent,
-    AgentExecutor
-)
+from langchain.agents import create_react_agent, AgentExecutor
 from langchain import hub
 from tools.tools import get_profile_url_tavily
 
 
 def lookup(name: str) -> str:
-    llm = ChatOpenAI(
-        temperature=0,
-        model_name="gpt-4o-mini"
-    )
+    llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
     template = """
         given the name {name_of_person} I want you to find a link to their Twitter profile page, and extract from it their username
         In your Final answer only the person's username"""

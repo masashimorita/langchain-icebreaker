@@ -42,6 +42,7 @@ def scrape_user_tweets(username, num_tweets=5, mock: bool = False):
 
     return tweet_list
 
+
 if __name__ == "__main__":
     tweets = scrape_user_tweets(username="EdenEmarco177", mock=True)
     print(tweets)
